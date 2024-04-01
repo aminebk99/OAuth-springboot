@@ -39,7 +39,7 @@ public class JwtSecurityConfiguration {
                                 SessionCreationPolicy.STATELESS
                         )
         );
-        httpSecurity.httpBasic(withDefaults());
+        httpSecurity.httpBasic(Customizer.withDefaults());
         httpSecurity.csrf(csrf -> csrf.disable());
         httpSecurity.headers(headers -> headers.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable()));
         httpSecurity.oauth2ResourceServer(oauth -> oauth.jwt(withDefaults()));

@@ -21,11 +21,11 @@ import java.util.stream.Collectors;
 public class JwtAuthenticationResource  {
     private final JwtEncoder jwtEncoder;
     private final UserService userService;
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers(){
         return ResponseEntity.ok().body(userService.getAllUsers());
     }
-    @PostMapping()
+    @PostMapping("/users")
     public ResponseEntity<User> saveUsers(@RequestBody User user){
         return ResponseEntity.ok().body(userService.saveUsers(user));
     }
